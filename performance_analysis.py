@@ -63,3 +63,9 @@ def plot_results(results):
     plt.show()
 
 plot_results(results)
+from visualization import PageReplacementGUI
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    gui = PageReplacementGUI(root)
+    root.mainloop()
