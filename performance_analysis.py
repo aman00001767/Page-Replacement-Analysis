@@ -25,3 +25,14 @@ if __name__ == "__main__":
     analyzer = PerformanceAnalyzer(FIFO)
     result = analyzer.evaluate(reference_string, frames)
     print(result)
+from module1_algorithms import FIFO, LRU, Optimal, LFU, Clock
+
+algorithms = [FIFO, LRU, Optimal, LFU, Clock]
+results = []
+
+for algo in algorithms:
+    analyzer = PerformanceAnalyzer(algo)
+    results.append(analyzer.evaluate(reference_string, frames))
+
+for res in results:
+    print(res)
