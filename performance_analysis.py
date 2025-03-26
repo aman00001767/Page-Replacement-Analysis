@@ -39,3 +39,27 @@ for res in results:
 from tabulate import tabulate
 
 print(tabulate(results, headers="keys", tablefmt="grid"))
+import matplotlib.pyplot as plt
+import numpy as np
+
+def plot_results(results):
+    algorithms = [res["Algorithm"] for res in results]
+    page_faults = [res["Page Faults"] for res in results]
+    execution_times = [res["Execution Time (s)"] for res in results]
+
+    x = np.arange(len(algorithms))
+    width = 0.35
+
+    fig, ax = plt.subplots()
+    ax.bar(x - width/2, page_faults, width, label="Page Faults")
+    ax.bar(x + width/2, execution_times, width, label="Execution Time")
+
+    ax.set_ylabel("Values")
+    ax.set_title("Performance Comparison of Page Replacement Algorithms")
+    ax.set_xticks(x)
+    ax.set_xticklabels(algorithms)
+    ax.legend()
+
+    plt.show()
+
+plot_results(results)
