@@ -69,3 +69,5 @@ if __name__ == "__main__":
     root = tk.Tk()
     gui = PageReplacementGUI(root)
     root.mainloop()
+reference_string = list(map(int, input("Enter reference string (comma-separated): ").split(",")))
+frames = int(input("Enter number of frames: "))
