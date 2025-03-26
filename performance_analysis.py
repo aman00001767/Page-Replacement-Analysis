@@ -36,3 +36,6 @@ for algo in algorithms:
 
 for res in results:
     print(res)
+from tabulate import tabulate
+
+print(tabulate(results, headers="keys", tablefmt="grid"))
